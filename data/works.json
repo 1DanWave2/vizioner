@@ -94,5 +94,21 @@
     "price": "Цена: по запросу",
     "description": "Графическая серия, ритм и цвет.",
     "image": "assets/img/works/izumrudov-lines.jpg"
+  },
+  {
+    "id": "izumrudov-warm",
+    "title": "gg",
+    "author": "Изумрудов",
+    "artist": "Изумрудов",
+    "year": "2020",
+    "type": "скульптура",
+    "style": "современная пластика",
+    "genre": "объект",
+    "size": "3000 см",
+    "material": "керамика",
+    "technique": "ручная лепка",
+    "price": "Цена: 200 000 000 ₽",
+    "description": "Малая форма с тактильной фактурой.",
+    "image": "assets/img/works/izumrudov-warm.jpg"
   }
 ]
