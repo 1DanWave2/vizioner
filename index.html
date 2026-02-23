@@ -1,49 +1,84 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Визионер — Галерея современного искусства</title>
-
-    <link rel="stylesheet" href="assets/css/styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <base href="/vizioner/">
+  <title>Визионер — галерея современного искусства</title>
+  <link rel="stylesheet" href="/vizioner/assets/css/styles.css">
+  <script type="module" src="/vizioner/assets/js/home.js" defer></script>
 </head>
-
 <body>
-
-<header class="header">
-    <div class="container">
-        <div class="logo">ВИЗИОНЕР</div>
-        <nav class="nav">
-            <a href="gallery.html">Галерея</a>
-            <a href="about.html">О проекте</a>
-            <a href="contact.html">Контакты</a>
-        </nav>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="Визионер — на главную">
+        <span class="mark" aria-hidden="true"></span>
+        <span class="name">Визионер</span>
+        <span class="tag">ART / Gallery</span>
+      </a>
+      <nav class="navlinks" aria-label="Навигация">
+        <a href="index.html">Главная</a>
+        <a href="gallery.html">Галерея</a>
+        <a href="about.html">О проекте</a>
+        <a href="contact.html">Контакты</a>
+      </nav>
     </div>
-</header>
+  </header>
 
-<section class="hero">
-    <div class="hero-content">
-        <h1>Галерея современного искусства</h1>
-        <p>Картины российских художников для интерьера и осознанного пространства</p>
-        <a class="btn" href="gallery.html">Смотреть работы</a>
+  <main id="content">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="card hero-copy">
+          <div class="kicker"><span class="dot"></span>галерея современного искусства</div>
+          <div class="h1">Проект «Визионер»</div>
+          <p class="sublead">
+            Работы современных российских художников — в разных стилях и жанрах.
+          </p>
+          <div class="actions">
+            <a class="btn primary" href="gallery.html">Перейти в галерею</a>
+            <a class="btn" href="about.html">Узнать о проекте</a>
+          </div>
+        </div>
+
+        <aside class="card hero-side">
+          <div class="quote">
+            <p>
+              Использование в интерьере картин, постеров и скульптуры малых форм
+              делает атмосферу эмоциональной и гармоничной.
+            </p>
+            <div class="sig">АРТВИЗИОНЕР</div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="parallax" data-parallax>
+      <div class="layer" style="background-image:url('/vizioner/assets/img/bg/parallax-1.jpg');"></div>
+      <div class="veil"></div>
+      <div class="content">
+        <div class="container">
+          <h2 style="color:#fff">Классика, которая дышит современностью</h2>
+          <p style="color:#fff">Нежные фактуры, благородная палитра и точные акценты.</p>
+          <div class="actions" style="margin-top:18px;">
+            <a class="btn primary" href="gallery.html">Смотреть работы</a>
+            <a class="btn ghost" href="contact.html">Связаться</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container footer">
+      <div>
+        <strong>Контакт:</strong>
+        <span> +7 900 000 00 00 · hello@vizioner.art</span>
+      </div>
+      <div>
+        <a href="https://t.me/USERNAME_CHANNEL" target="_blank" rel="noopener">Наш Telegram-канал</a>
+      </div>
     </div>
-</section>
-
-<section class="about-short">
-    <div class="container">
-        <h2>Искусство формирует вкус</h2>
-        <p>
-        Мы помогаем подобрать картины под интерьер, настроение и пространство.
-        Живопись создаёт атмосферу гармонии и глубины.
-        </p>
-    </div>
-</section>
-
-<footer class="footer">
-    <div class="container">
-        © Визионер
-    </div>
-</footer>
-
+  </footer>
 </body>
 </html>
