@@ -1,84 +1,134 @@
 <!doctype html>
-<html lang="ru">
+<html lang="ru"
+      data-telegram="https://t.me/vizioner959"
+      data-phone="+7 903 720 24 99"
+      data-email="ovsyannikov002@gmail.com">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <base href="/vizioner/">
-  <title>Визионер — галерея современного искусства</title>
-  <link rel="stylesheet" href="/vizioner/assets/css/styles.css">
-  <script type="module" src="/vizioner/assets/js/home.js" defer></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Галерея — Визионер</title>
+
+<link rel="stylesheet" href="assets/css/styles.css">
 </head>
+
 <body>
-  <header>
-    <div class="container nav">
-      <a class="brand" href="index.html" aria-label="Визионер — на главную">
-        <span class="mark" aria-hidden="true"></span>
-        <span class="name">Визионер</span>
-        <span class="tag">ART / Gallery</span>
-      </a>
-      <nav class="navlinks" aria-label="Навигация">
-        <a href="index.html">Главная</a>
-        <a href="gallery.html">Галерея</a>
-        <a href="about.html">О проекте</a>
-        <a href="contact.html">Контакты</a>
-      </nav>
+
+<header>
+  <div class="container nav">
+    <a class="brand" href="index.html">
+      <span class="mark"></span>
+      <span class="name">Визионер</span>
+    </a>
+
+    <nav class="navlinks">
+      <a href="index.html">Главная</a>
+      <a href="gallery.html">Галерея</a>
+      <a href="about.html">О проекте</a>
+      <a href="contact.html">Контакты</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container" id="content">
+
+  <!-- Заголовок -->
+  <section class="page-hero">
+    <div>
+      <div class="breadcrumb">Визионер / Галерея</div>
+      <h1>Галерея</h1>
     </div>
-  </header>
+  </section>
 
-  <main id="content">
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="card hero-copy">
-          <div class="kicker"><span class="dot"></span>галерея современного искусства</div>
-          <div class="h1">Проект «Визионер»</div>
-          <p class="sublead">
-            Работы современных российских художников — в разных стилях и жанрах.
-          </p>
-          <div class="actions">
-            <a class="btn primary" href="gallery.html">Перейти в галерею</a>
-            <a class="btn" href="about.html">Узнать о проекте</a>
-          </div>
-        </div>
-
-        <aside class="card hero-side">
-          <div class="quote">
-            <p>
-              Использование в интерьере картин, постеров и скульптуры малых форм
-              делает атмосферу эмоциональной и гармоничной.
-            </p>
-            <div class="sig">АРТВИЗИОНЕР</div>
-          </div>
-        </aside>
-      </div>
-    </section>
-
-    <section class="parallax" data-parallax>
-      <div class="layer" style="background-image:url('/vizioner/assets/img/bg/parallax-1.jpg');"></div>
-      <div class="veil"></div>
-      <div class="content">
-        <div class="container">
-          <h2 style="color:#fff">Классика, которая дышит современностью</h2>
-          <p style="color:#fff">Нежные фактуры, благородная палитра и точные акценты.</p>
-          <div class="actions" style="margin-top:18px;">
-            <a class="btn primary" href="gallery.html">Смотреть работы</a>
-            <a class="btn ghost" href="contact.html">Связаться</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <footer>
-    <div class="container footer">
-      <div>
-        <strong>Контакт:</strong>
-        <span> +7 900 000 00 00 · hello@vizioner.art</span>
-      </div>
-      <div>
-        <a href="https://t.me/USERNAME_CHANNEL" target="_blank" rel="noopener">Наш Telegram-канал</a>
+  <!-- Параллакс -->
+  <section class="parallax" data-parallax>
+    <div class="layer" style="background-image:url('assets/img/bg/parallax-3.jpg');"></div>
+    <div class="veil"></div>
+    <div class="content">
+      <div class="container">
+        <h2>Выберите настроение</h2>
       </div>
     </div>
-  </footer>
+  </section>
+
+  <!-- Фильтры -->
+  <section class="gallery-head">
+    <div class="toolbar" aria-label="Фильтры и поиск">
+
+      <!-- базовый фильтр -->
+      <button class="chip active" data-filter="all">Все</button>
+
+      <!-- сюда gallery.js вставит типы и авторов -->
+      <div class="search">
+        <input id="searchInput" placeholder="Поиск: название, автор, стиль…" />
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Галерея -->
+  <section class="section">
+    <div id="grid" class="gallery-grid" aria-label="Сетка работ"></div>
+  </section>
+
+</main>
+
+<!-- МОДАЛЬНОЕ ОКНО -->
+<div id="modal" class="modal" role="dialog" aria-modal="true" aria-label="Карточка работы">
+  <div class="modal-card">
+
+    <div class="img">
+      <img id="modalImg" alt="">
+    </div>
+
+    <div class="modal-side">
+
+      <div style="display:flex;justify-content:space-between;align-items:center;">
+        <h3 id="modalTitle"></h3>
+        <button id="closeModal" class="btn">✕</button>
+      </div>
+
+      <p id="modalSub" class="desc"></p>
+      <p id="modalDesc" class="desc"></p>
+
+      <div class="kv">
+        <div class="k">
+          <div class="l">Материал</div>
+          <div id="kvMaterial" class="v">—</div>
+        </div>
+        <div class="k">
+          <div class="l">Техника</div>
+          <div id="kvTechnique" class="v">—</div>
+        </div>
+      </div>
+
+      <div id="modalPrice" class="price"></div>
+
+      <div style="display:flex;gap:10px;margin-top:14px">
+        <a id="tgBtn" class="btn primary" href="#" target="_blank" rel="noopener">
+          Написать в Telegram
+        </a>
+
+        <button id="copyTitle" class="btn">
+          Скопировать название
+        </button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ФУТЕР (пустой — заполняется gallery.js) -->
+<footer>
+  <div class="container footer">
+    <div class="footer-contacts"></div>
+    <div class="footer-social"></div>
+  </div>
+</footer>
+
+<!-- ВАЖНО: путь без /vizioner -->
+<script src="assets/js/gallery.js?v=6" defer></script>
+
 </body>
 </html>
