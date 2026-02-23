@@ -1,46 +1,53 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>О проекте — Визионер</title>
-<link rel="stylesheet" href="assets/css/styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <base href="/vizioner/">
+  <title>О проекте — Визионер</title>
+  <link rel="stylesheet" href="/vizioner/assets/css/styles.css">
+  <script type="module" src="/vizioner/assets/js/home.js" defer></script>
 </head>
-
 <body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="index.html"><span class="mark"></span><span class="name">Визионер</span></a>
+      <nav class="navlinks"><a href="index.html">Главная</a><a href="gallery.html">Галерея</a><a href="contact.html">Контакты</a></nav>
+    </div>
+  </header>
 
-<header class="header">
-<div class="container">
-<div class="logo">ВИЗИОНЕР</div>
-<nav class="nav">
-<a href="index.html">Главная</a>
-<a href="gallery.html">Галерея</a>
-<a href="contact.html">Контакты</a>
-</nav>
-</div>
-</header>
+  <main id="content">
+    <section class="page-hero container">
+      <div class="wrap">
+        <div>
+          <div class="breadcrumb">Визионер / О проекте</div>
+          <h1>О проекте</h1>
+        </div>
+        <a class="btn primary" href="gallery.html">Смотреть галерею</a>
+      </div>
+    </section>
 
-<section class="page">
-<div class="container narrow">
+    <section class="section container">
+      <div class="grid-2">
+        <div class="panel">
+          <div class="smallcaps">идея</div>
+          <div class="h2" style="margin-top:8px;">Искусство как часть повседневности</div>
+          <p class="p">В галерее АРТВИЗИОНЕР представлены работы современных российских художников...</p>
+        </div>
+        <div class="panel">
+          <div class="smallcaps">подход</div>
+          <div class="h2" style="margin-top:8px;">Сдержанно и классично — но живо</div>
+          <p class="p">Мы выбираем работы, которые можно “вписать” деликатно...</p>
+        </div>
+      </div>
+    </section>
+  </main>
 
-<h1>О проекте</h1>
-
-<p>
-В галерее «Визионер» представлены работы современных российских художников.
-Мы подбираем искусство для интерьера и эмоционального пространства.
-</p>
-
-<p>
-Живопись помогает увидеть красоту в повседневности и формирует вкус.
-Наша задача — сделать пространство индивидуальным и осознанным.
-</p>
-
-</div>
-</section>
-
-<footer class="footer">
-<div class="container">© Визионер</div>
-</footer>
-
+  <footer>
+    <div class="container footer">
+      <div><strong>Контакт:</strong><span> +7 900 000 00 00 · hello@vizioner.art</span></div>
+      <div><a href="https://t.me/USERNAME_CHANNEL">Наш Telegram-канал</a></div>
+    </div>
+  </footer>
 </body>
 </html>
