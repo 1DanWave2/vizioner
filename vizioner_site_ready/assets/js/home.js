@@ -1,0 +1,1 @@
+import { setActiveNav, initParallax } from './app.js'; import { applySiteConfig } from './site.config.js'; applySiteConfig(); setActiveNav(); initParallax();
