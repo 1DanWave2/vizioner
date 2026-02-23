@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ru">
+<html lang="ru" data-telegram="https://t.me/vizioner959" data-phone="+7 903 720 24 99" data-email="ovsyannikov002@gmail.com">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -11,8 +11,12 @@
 <body>
   <header>
     <div class="container nav">
-      <a class="brand" href="index.html"><span class="mark"></span><span class="name">Визионер</span></a>
-      <nav class="navlinks"><a href="index.html">Главная</a><a href="gallery.html">Галерея</a><a href="about.html">О проекте</a></nav>
+      <a class="brand" href="index.html"><span class="mark" aria-hidden="true"></span><span class="name">Визионер</span></a>
+      <nav class="navlinks" aria-label="Навигация">
+        <a href="index.html">Главная</a>
+        <a href="gallery.html">Галерея</a>
+        <a href="about.html">О проекте</a>
+      </nav>
     </div>
   </header>
 
@@ -32,11 +36,16 @@
         <div class="panel">
           <div class="smallcaps">связь</div>
           <div class="h2" style="margin-top:8px;">Напишите нам</div>
-          <p class="p">Самый быстрый способ — Telegram.</p>
-          <div class="actions">
-            <a class="btn primary" href="https://t.me/vizioner959" target="_blank">Открыть Telegram</a>
-            <a class="btn" href="mailto:ovsyannikov002@gmail.com">ovsyannikov002@gmail.com</a>
+          <p class="p">Самый быстрый способ — Telegram. Можно прислать фото интерьера и пожелания по стилю/цвету.</p>
+
+          <!-- Динамическая кнопка: href будет проставлен скриптом ниже -->
+          <div class="actions" style="margin-top:12px;">
+            <a id="openTgBtn" class="btn primary" data-tg>Открыть Telegram</a>
+            <a id="mailBtn" class="btn" href="#">email</a>
+            <a id="telBtn" class="btn" href="#">телефон</a>
           </div>
+
+          <div class="mini" style="margin-top:10px;">Контакты можно изменить в <code>assets/js/site.config.js</code> или в атрибутах <code>&lt;html data-*&gt;</code>.</div>
         </div>
 
         <div class="panel">
@@ -55,9 +64,71 @@
 
   <footer>
     <div class="container footer">
-      <div><strong>Контакт:</strong><span> +7 903 720 24 99 · ovsyannikov002@gmail.com</span></div>
-      <div><a href="https://t.me/vizioner959">Наш Telegram-канал</a></div>
+      <div class="footer-left"></div>
+      <div class="footer-right"></div>
     </div>
   </footer>
+
+  <!-- Скрипт гарантированно проставит ссылки (работает даже если другие скрипты меняют DOM) -->
+  <script>
+    (function(){
+      // Подождём DOM
+      function applyContacts() {
+        try {
+          const root = document.documentElement;
+          // Приоритет: data-* на html → site.config.js (если он написал в DOM) → жестко в HTML (fallbacks)
+          const tg = (root.dataset.telegram && root.dataset.telegram.trim()) || "https://t.me/vizioner959";
+          const phone = (root.dataset.phone && root.dataset.phone.trim()) || "+7 903 720 24 99";
+          const email = (root.dataset.email && root.dataset.email.trim()) || "ovsyannikov002@gmail.com";
+
+          // Основные кнопки в секции
+          const openTg = document.getElementById("openTgBtn");
+          const mailBtn = document.getElementById("mailBtn");
+          const telBtn = document.getElementById("telBtn");
+
+          if (openTg) {
+            openTg.setAttribute("href", tg);
+            openTg.setAttribute("target", "_blank");
+            openTg.setAttribute("rel", "noopener noreferrer");
+            // дополнительный резервный обработчик для браузеров, где клик может перехватываться
+            openTg.addEventListener("click", function(e){
+              // основной путь: позволяем браузеру открыть ссылку; как запас — window.open
+              try { window.open(tg, "_blank"); } catch(err) { /* noop */ }
+            });
+          }
+
+          if (mailBtn) {
+            mailBtn.setAttribute("href", "mailto:" + email);
+          }
+
+          if (telBtn) {
+            telBtn.setAttribute("href", "tel:" + phone.replace(/\s+/g,""));
+          }
+
+          // Подставляем контакты в футер
+          const fl = document.querySelector(".footer-left");
+          const fr = document.querySelector(".footer-right");
+          if (fl) {
+            fl.innerHTML = '<strong>Контакт:</strong> <span> ' +
+              (phone ? ('<a href="tel:' + phone.replace(/\s+/g,'') + '">' + phone + '</a>') : '') +
+              (email ? (' · <a href="mailto:' + email + '">' + email + '</a>') : '') +
+              '</span>';
+          }
+          if (fr) {
+            fr.innerHTML = '<a href="' + tg + '" target="_blank" rel="noopener">Наш Telegram-канал</a>';
+          }
+        } catch (err) {
+          // не критично — оставляем дефолтную верстку
+          console.warn("applyContacts error:", err);
+        }
+      }
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", applyContacts, { once: true });
+      } else {
+        applyContacts();
+      }
+    })();
+  </script>
 </body>
 </html>
