@@ -58,3 +58,31 @@ export function tgLink(base, text){
     return base;
   }
 }
+// ---- mobile nav toggle ----
+document.addEventListener("DOMContentLoaded", () => {
+  const navlinks = document.querySelector(".navlinks");
+  if (!navlinks) return;
+  // создаём кнопку гамбургера (если её нет в HTML)
+  let btn = document.querySelector(".hamburger");
+  if (!btn){
+    btn = document.createElement("button");
+    btn.className = "hamburger";
+    btn.setAttribute("aria-label","Меню");
+    btn.innerHTML = "☰";
+    const nav = document.querySelector(".nav");
+    if (nav) nav.appendChild(btn);
+  }
+  btn.addEventListener("click", () => {
+    navlinks.classList.toggle("open");
+    btn.classList.toggle("open");
+  });
+
+  // закрывать меню по клику снаружи
+  document.addEventListener("click", (e) => {
+    if (!navlinks.classList.contains("open")) return;
+    if (!navlinks.contains(e.target) && !btn.contains(e.target)){
+      navlinks.classList.remove("open");
+      btn.classList.remove("open");
+    }
+  });
+});
