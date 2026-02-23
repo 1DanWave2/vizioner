@@ -1,9 +1,9 @@
 // site.config.js — пункты для редактирования (телефон, почта, Telegram)
 export const SITE = {
-  phone: "+7 900 000 00 00",
-  email: "hello@vizioner.art",
-  telegramWrite: "https://t.me/USERNAME_OR_BOT",    // куда писать (личное сообщение / бот)
-  telegramChannel: "https://t.me/USERNAME_CHANNEL" // канал / паблик (ссылка в футере)
+  phone: "+7 903 720 24 99",
+  email: "ovsyannikov002@gmail.com",
+  telegramWrite: "https://t.me/vizioner959",    // куда писать (личное сообщение / бот)
+  telegramChannel: "https://t.me/vizioner959" // канал / паблик (ссылка в футере)
 };
 
 // автоподстановка
