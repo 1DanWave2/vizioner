@@ -64,6 +64,22 @@
     "image": "assets/img/works/uglach-Pticelov.jpg.jpg"
   },
   {
+    "id": "uglach-USinegoMorya.jpg",
+    "title": "У самого синего моря",
+    "author": "Углач",
+    "artist": "Углач",
+    "year": "2022",
+    "type": "живопись",
+    "style": "Холст масло",
+    "genre": "Пейзаж",
+    "size": "60×70 см",
+    "material": "Холст масло",
+    "technique": "Масляные краски",
+    "price": "Цена: по запросу",
+    "description": "Пейзаж. У самого синего моря.",
+    "image": "assets/img/works/uglach-USinegoMorya.jpg.jpg"
+  },
+  {
     "id": "izumrudov-warm",
     "title": "Тёплый ритм",
     "author": "Изумрудов",
@@ -114,8 +130,8 @@
   {
     "id": "uglach-Granat.jpg",
     "title": "Гранатовое Утро",
-    "author": "Углач В.",
-    "artist": "Углач В.",
+    "author": "Углач",
+    "artist": "Углач",
     "year": "2015",
     "type": "живопись",
     "style": "Холст масло",
