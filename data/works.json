@@ -80,6 +80,38 @@
     "image": "assets/img/works/uglach-USinegoMorya.jpg.jpg"
   },
   {
+    "id": "uglach-uglach-Barcas.jpg",
+    "title": "Старый баркас",
+    "author": "Углач",
+    "artist": "Углач",
+    "year": "2022",
+    "type": "живопись",
+    "style": "Холст масло",
+    "genre": "Пейзаж",
+    "size": "60×70 см",
+    "material": "Холст масло",
+    "technique": "Масляные краски",
+    "price": "Цена: по запросу",
+    "description": "Пейзаж. Старый баркас.",
+    "image": "assets/img/works/uglach-Barcas.jpg.jpg"
+  },
+  {
+    "id": "uglach-Yalta.jpg",
+    "title": "Набережная Ялты",
+    "author": "Углач",
+    "artist": "Углач",
+    "year": "2022",
+    "type": "живопись",
+    "style": "Холст масло",
+    "genre": "Пейзаж",
+    "size": "70×60 см",
+    "material": "Холст масло",
+    "technique": "Масляные краски",
+    "price": "Цена: по запросу",
+    "description": "Пейзаж. Набережная Ялты.",
+    "image": "assets/img/works/uglach-Yalta.jpg.jpg"
+  },
+  {
     "id": "izumrudov-warm",
     "title": "Тёплый ритм",
     "author": "Изумрудов",
