@@ -110,5 +110,21 @@
     "price": "Цена: по запросу",
     "description": "Натюрморт. Весенняя сирень.",
     "image": "assets/img/works/izumrudov-warm.jpg"
+  },
+  {
+    "id": "uglach-Granat.jpg",
+    "title": "Гранатовое Утро",
+    "author": "Углач В.",
+    "artist": "Углач В.",
+    "year": "2015",
+    "type": "живопись",
+    "style": "Холст масло",
+    "genre": "Пейзаж",
+    "size": "80×70 см",
+    "material": "Холст масло",
+    "technique": "Масляные краски",
+    "price": "Цена: по запросу",
+    "description": "Пейзаж Гранатовое утро.",
+    "image": "assets/img/works/uglach-Granat.jpg.jpg"
   }
 ]
