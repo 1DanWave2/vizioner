@@ -48,20 +48,20 @@
     "image": "assets/img/works/uglach-PosleDojdya.jpg.jpg"
   },
   {
-    "id": "uglach-silence",
-    "title": "Молчание",
+    "id": "uglach-Pticelov.jpg",
+    "title": "Птицелов с соколом",
     "author": "Углач",
     "artist": "Углач",
     "year": "2022",
     "type": "живопись",
-    "style": "неовизантийский",
-    "genre": "натюрморт",
-    "size": "60×50 см",
-    "material": "холст",
-    "technique": "акрил",
+    "style": "Холст масло",
+    "genre": "портрет",
+    "size": "70×60 см",
+    "material": "Холст масло",
+    "technique": "Масляные краски",
     "price": "Цена: по запросу",
-    "description": "Лаконичная картина с глубокой фактурой.",
-    "image": "assets/img/works/uglach-silence.jpg"
+    "description": "Портрет. Птицелов с соколом.",
+    "image": "assets/img/works/uglach-Pticelov.jpg.jpg"
   },
   {
     "id": "izumrudov-warm",
