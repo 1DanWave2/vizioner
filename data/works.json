@@ -32,20 +32,20 @@
     "image": "assets/img/works/esenov-evening.jpg"
   },
   {
-    "id": "uglach-abstract-1",
-    "title": "Абстрактный ритм",
+    "id": "uglach-PosleDojdya.jpg",
+    "title": "После дождя",
     "author": "Углач",
     "artist": "Углач",
-    "year": "2024",
-    "type": "постер",
-    "style": "графический дизайн",
-    "genre": "абстракция",
-    "size": "A2",
-    "material": "бумага",
-    "technique": "печать",
-    "price": "8 000 ₽",
-    "description": "Энергичная графика для современных интерьеров.",
-    "image": "assets/img/works/uglach-abstract-1.jpg"
+    "year": "2022",
+    "type": "живопись",
+    "style": "Холст масло",
+    "genre": "Пейзаж",
+    "size": "60х70 см",
+    "material": "Холст масло",
+    "technique": "Масляные краски",
+    "price": "Цена: по запросу",
+    "description": "Пейзаж. После дождя.",
+    "image": "assets/img/works/uglach-PosleDojdya.jpg.jpg"
   },
   {
     "id": "uglach-silence",
