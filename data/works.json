@@ -32,6 +32,38 @@
     "image": "assets/img/works/uglach-Pticelov.jpg.jpg"
   },
   {
+    "id": "Shugaev-Voshod.jpg",
+    "title": "Горы. Восход.",
+    "author": "Шугаев",
+    "artist": "Шугаев",
+    "year": "2024",
+    "type": "живопись",
+    "style": "Холст масло",
+    "genre": "Пейзаж",
+    "size": "110х130 см",
+    "material": "холст",
+    "technique": "Масляные краски",
+    "price": "Цена: по запросу",
+    "description": "Пейзаж. Горы. Восход.",
+    "image": "assets/img/works/Shugaev-Voshod.jpg.jpg"
+  },
+  {
+    "id": "Shugaev-Zakat.jpg",
+    "title": "Горы. Закат.",
+    "author": "Шугаев",
+    "artist": "Шугаев",
+    "year": "2024",
+    "type": "живопись",
+    "style": "Холст масло",
+    "genre": "Пейзаж",
+    "size": "110х130 см",
+    "material": "холст",
+    "technique": "Масляные краски",
+    "price": "Цена: по запросу",
+    "description": "Пейзаж. Горы. Закат.",
+    "image": "assets/img/works/Shugaev-Zakat.jpg.jpg"
+  },
+  {
     "id": "uglach-USinegoMorya.jpg",
     "title": "У самого синего моря",
     "author": "Углач",
@@ -78,6 +110,22 @@
     "price": "Цена: по запросу",
     "description": "Пейзаж. Набережная Ялты.",
     "image": "assets/img/works/uglach-Yalta.jpg.jpg"
+  },
+  {
+    "id": "Shugaev-Potok.jpg",
+    "title": "У горного потока.",
+    "author": "Шугаев",
+    "artist": "Шугаев",
+    "year": "2025",
+    "type": "живопись",
+    "style": "Холст масло",
+    "genre": "Пейзаж",
+    "size": "80х90 см",
+    "material": "холст",
+    "technique": "Масляные краски",
+    "price": "Цена: по запросу",
+    "description": "Пейзаж. У горного потока.",
+    "image": "assets/img/works/Shugaev-Potok.jpg.jpg"
   },
    {
     "id": "uglach-Ribackie.jpg",
