@@ -3,82 +3,118 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <base href="/vizioner/">
   <title>Визионер — галерея современного искусства</title>
-  <link rel="stylesheet" href="/vizioner/assets/css/styles.css">
-  <script type="module" src="/vizioner/assets/js/home.js" defer></script>
+  <meta name="description" content="Онлайн-галерея современного российского искусства и подбор арт-решений для интерьера. Живопись, графика, постеры, скульптура.">
+
+  <link rel="icon" type="image/svg+xml" href="assets/img/logo/favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-  <header>
-    <div class="container nav">
-      <a class="brand" href="index.html" aria-label="Визионер — на главную">
-        <span class="mark" aria-hidden="true"></span>
-        <span class="name">Визионер</span>
-        <span class="tag">ART / Gallery</span>
-      </a>
-      <nav class="navlinks" aria-label="Навигация">
-        <a href="index.html">Главная</a>
-        <a href="gallery.html">Галерея</a>
-        <a href="about.html">О проекте</a>
-        <a href="contact.html">Контакты</a>
-      </nav>
-    </div>
-  </header>
+
+  <div id="site-header"></div>
 
   <main id="content">
+
     <section class="hero">
-      <div class="container hero-grid">
-        <div class="card hero-copy">
-          <div class="kicker"><span class="dot"></span>галерея современного искусства</div>
-          <div class="h1">Проект «Визионер»</div>
-          <p class="sublead">
-            Работы современных российских художников — в разных стилях и жанрах.
-          </p>
-          <div class="actions">
-            <a class="btn primary" href="gallery.html">Перейти в галерею</a>
-            <a class="btn" href="about.html">Узнать о проекте</a>
-          </div>
+      <div class="container">
+
+        <span class="hero-mark-wrap">
+          <svg class="hero-mark" viewBox="0 0 200 200" fill="none" stroke="currentColor"
+               stroke-linejoin="miter" stroke-linecap="square" aria-hidden="true">
+            <polygon points="100,28 180,172 20,172" stroke-width="10"/>
+            <line x1="48" y1="138" x2="152" y2="138" stroke-width="8"/>
+            <path d="M 60 112 Q 100 76 140 112" stroke-width="8"/>
+            <path d="M 60 112 Q 100 148 140 112" stroke-width="8"/>
+            <circle cx="100" cy="112" r="14" fill="currentColor" stroke="none"/>
+          </svg>
+        </span>
+
+        <div class="hero-meta">
+          <span>Галерея современного искусства</span>
+          <span>Москва · 2026</span>
         </div>
 
-        <aside class="card hero-side">
-          <div class="quote">
-            <p>
-              Использование в интерьере картин, постеров и скульптуры малых форм
-              делает атмосферу эмоциональной и гармоничной.
-            </p>
-            <div class="sig">АРТВИЗИОНЕР</div>
-          </div>
-        </aside>
+        <h1 class="hero-title">Визионер</h1>
+
+        <p class="hero-lead">
+          Онлайн-галерея и проект по подбору работ современных российских художников
+          для частных интерьеров.
+        </p>
       </div>
     </section>
 
-    <section class="parallax" data-parallax>
-      <div class="layer" style="background-image:url('/vizioner/assets/img/bg/parallax-1.jpg');"></div>
-      <div class="veil"></div>
-      <div class="content">
-        <div class="container">
-          <h2 style="color:#fff">Классика, которая дышит современностью</h2>
-          <p style="color:#fff">Нежные фактуры, благородная палитра и точные акценты.</p>
-          <div class="actions" style="margin-top:18px;">
-            <a class="btn primary" href="gallery.html">Смотреть работы</a>
-            <a class="btn ghost" href="contact.html">Связаться</a>
+    <section class="section">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div>
+            <p class="eyebrow section-heading-eyebrow">Избранные работы</p>
+            <h2 class="h2">Из текущей коллекции</h2>
+          </div>
+          <a class="section-heading-link" href="gallery.html">Вся галерея →</a>
+        </div>
+        <div id="featured-grid" class="works-grid"></div>
+      </div>
+    </section>
+
+    <section class="cta-banner">
+      <div class="container">
+        <p class="eyebrow">Услуга</p>
+        <h2 class="h2 mt-3">Подберём картину под ваш интерьер</h2>
+        <p class="lead mt-5" style="max-width: 640px; margin-inline: auto;">
+          Пришлите фото пространства — за 24–48 часов предложим 3–5 работ, которые впишутся по стилю, цвету и масштабу. Бесплатно.
+        </p>
+        <div class="mt-7">
+          <a class="btn-line" href="service.html">Как это работает →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-tight">
+      <div class="container">
+        <div class="two-col reveal">
+          <div>
+            <p class="eyebrow">Идея</p>
+            <h2 class="h2 mt-3">Искусство как часть пространства</h2>
+          </div>
+          <div class="prose">
+            <p>
+              Картины, графика и объекты способны формировать атмосферу дома,
+              подчёркивать стиль интерьера, развивать вкус и насмотренность.
+              Мы помогаем выбрать именно ту работу, которая органично впишется
+              в пространство и будет усиливать его атмосферу.
+            </p>
+            <p>
+              Визионер — это про осознанный выбор искусства. Про пространство,
+              в котором каждая деталь имеет смысл и характер.
+            </p>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section class="section" style="border-top: 1px solid var(--line);">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div>
+            <p class="eyebrow section-heading-eyebrow">Художники</p>
+            <h2 class="h2">Авторы галереи</h2>
+          </div>
+          <a class="section-heading-link" href="artists.html">Все художники →</a>
+        </div>
+        <div id="artists-row" class="artists-row reveal"></div>
       </div>
     </section>
 
   </main>
 
-  <footer>
-    <div class="container footer">
-      <div>
-        <strong>Контакт:</strong>
-        <span> +7 903 720 24 99 · 11proekt@mail.ru</span>
-      </div>
-      <div>
-        <a href="https://t.me/vizioner959" target="_blank" rel="noopener">Наш Telegram-канал</a>
-      </div>
-    </div>
-  </footer>
+  <div id="site-footer"></div>
+
+  <script type="module" src="assets/js/app.js"></script>
+  <script type="module" src="assets/js/home.js"></script>
 </body>
 </html>

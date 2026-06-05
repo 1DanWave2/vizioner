@@ -1,131 +1,123 @@
 <!doctype html>
-<html lang="ru" data-telegram="https://t.me/vizioner959" data-phone="+7 903 720 24 99" data-email="11proekt@mail.ru">
+<html lang="ru">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <base href="/vizioner/">
   <title>Контакты — Визионер</title>
-  <link rel="stylesheet" href="/vizioner/assets/css/styles.css">
-  <script type="module" src="/vizioner/assets/js/home.js" defer></script>
+  <meta name="description" content="Связаться с галереей Визионер: Telegram, телефон, email.">
+
+  <link rel="icon" type="image/svg+xml" href="assets/img/logo/favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-  <header>
-    <div class="container nav">
-      <a class="brand" href="index.html"><span class="mark" aria-hidden="true"></span><span class="name">Визионер</span></a>
-      <nav class="navlinks" aria-label="Навигация">
-        <a href="index.html">Главная</a>
-        <a href="gallery.html">Галерея</a>
-        <a href="about.html">О проекте</a>
-      </nav>
-    </div>
-  </header>
 
-  <main id="content" class="container">
+  <div id="site-header"></div>
+
+  <main id="content">
+
     <section class="page-hero">
-      <div class="wrap">
-        <div>
-          <div class="breadcrumb">Визионер / Контакты</div>
-          <h1>Контакты</h1>
-        </div>
-        <a class="btn primary" href="gallery.html">В галерею</a>
+      <div class="container">
+        <p class="breadcrumb">Визионер / Контакты</p>
+        <h1 class="h1">Контакты</h1>
       </div>
     </section>
 
     <section class="section">
-      <div class="grid-2">
-        <div class="panel">
-          <div class="smallcaps">связь</div>
-          <div class="h2" style="margin-top:8px;">Напишите нам</div>
-          <p class="p">Самый быстрый способ — Telegram. Можно прислать фото интерьера и пожелания по стилю/цвету.</p>
+      <div class="container">
+        <div class="two-col reveal">
 
-          <!-- Динамическая кнопка: href будет проставлен скриптом ниже -->
-          <div class="actions" style="margin-top:12px;">
-            <a id="openTgBtn" class="btn primary" data-tg>Открыть Telegram</a>
-            <a id="mailBtn" class="btn" href="#">email</a>
-            <a id="telBtn" class="btn" href="#">телефон</a>
+          <div>
+            <p class="eyebrow">Связь</p>
+            <h2 class="h2" style="margin-top:12px">Напишите нам</h2>
+            <p class="body-text">
+              Самый быстрый способ — Telegram. Можно прислать фото пространства
+              и пожелания — мы предложим подходящие работы.
+            </p>
+
+            <ul class="contact-list" style="margin-top:32px">
+              <li>
+                <span class="label">Telegram</span>
+                <span class="value"><a id="contact-tg" href="https://t.me/vizioner959" target="_blank" rel="noopener">@vizioner959</a></span>
+              </li>
+              <li>
+                <span class="label">Телефон</span>
+                <span class="value"><a id="contact-phone" href="tel:+79037202499">+7 903 720 24 99</a></span>
+              </li>
+              <li>
+                <span class="label">Email</span>
+                <span class="value"><a id="contact-email" href="mailto:11proekt@mail.ru">11proekt@mail.ru</a></span>
+              </li>
+            </ul>
           </div>
 
-        <div class="panel">
-          <div class="smallcaps">быстрый запрос</div>
-          <div class="h2" style="margin-top:8px;">Шаблон сообщения</div>
-          <pre style="white-space:pre-wrap; margin:14px 0 0; padding:14px;">Здравствуйте! Хочу подобрать работу для интерьера.
+          <div>
+            <div style="display:flex; align-items:baseline; justify-content:space-between; gap:var(--s-4); flex-wrap:wrap;">
+              <p class="eyebrow">Шаблон сообщения</p>
+              <button id="copy-template-btn" class="text-link" type="button" style="cursor:pointer; background:none; border:none; padding:0;">Скопировать</button>
+            </div>
+            <h3 class="h3 mt-3">Чтобы быстрее предложить варианты</h3>
+            <pre id="message-template" class="message-template mt-5">Здравствуйте! Хочу подобрать работу для интерьера.
 Размер стены: …
 Стиль интерьера: …
-Палитра/цвета: …
-Предпочтение: живопись/графика/постер/скульптура
+Палитра / цвета: …
+Предпочтение: живопись / графика / постер / скульптура
 Бюджет: …</pre>
+          </div>
+
         </div>
       </div>
     </section>
+
   </main>
 
-  <footer>
-    <div class="container footer">
-      <div class="footer-left"></div>
-      <div class="footer-right"></div>
-    </div>
-  </footer>
+  <div id="site-footer"></div>
 
-  <!-- Скрипт гарантированно проставит ссылки (работает даже если другие скрипты меняют DOM) -->
-  <script>
-    (function(){
-      // Подождём DOM
-      function applyContacts() {
+  <script type="module">
+    import { SITE } from "./assets/js/site.config.js";
+    document.getElementById("contact-tg").href = SITE.telegramWrite;
+    const phoneA = document.getElementById("contact-phone");
+    phoneA.href = "tel:" + SITE.phone.replace(/\s+/g, "");
+    phoneA.textContent = SITE.phone;
+    const emailA = document.getElementById("contact-email");
+    emailA.href = "mailto:" + SITE.email;
+    emailA.textContent = SITE.email;
+
+    // Копирование шаблона сообщения
+    const copyBtn = document.getElementById("copy-template-btn");
+    const tplEl = document.getElementById("message-template");
+    if (copyBtn && tplEl) {
+      copyBtn.addEventListener("click", async () => {
+        const text = tplEl.textContent;
+        const original = copyBtn.textContent;
+        let ok = false;
         try {
-          const root = document.documentElement;
-          // Приоритет: data-* на html → site.config.js (если он написал в DOM) → жестко в HTML (fallbacks)
-          const tg = (root.dataset.telegram && root.dataset.telegram.trim()) || "https://t.me/vizioner959";
-          const phone = (root.dataset.phone && root.dataset.phone.trim()) || "+7 903 720 24 99";
-          const email = (root.dataset.email && root.dataset.email.trim()) || "11proekt@mail.ru";
-
-          // Основные кнопки в секции
-          const openTg = document.getElementById("openTgBtn");
-          const mailBtn = document.getElementById("mailBtn");
-          const telBtn = document.getElementById("telBtn");
-
-          if (openTg) {
-            openTg.setAttribute("href", tg);
-            openTg.setAttribute("target", "_blank");
-            openTg.setAttribute("rel", "noopener noreferrer");
-            // дополнительный резервный обработчик для браузеров, где клик может перехватываться
-            openTg.addEventListener("click", function(e){
-              // основной путь: позволяем браузеру открыть ссылку; как запас — window.open
-              try { window.open(tg, "_blank"); } catch(err) { /* noop */ }
-            });
-          }
-
-          if (mailBtn) {
-            mailBtn.setAttribute("href", "mailto:" + email);
-          }
-
-          if (telBtn) {
-            telBtn.setAttribute("href", "tel:" + phone.replace(/\s+/g,""));
-          }
-
-          // Подставляем контакты в футер
-          const fl = document.querySelector(".footer-left");
-          const fr = document.querySelector(".footer-right");
-          if (fl) {
-            fl.innerHTML = '<strong>Контакт:</strong> <span> ' +
-              (phone ? ('<a href="tel:' + phone.replace(/\s+/g,'') + '">' + phone + '</a>') : '') +
-              (email ? (' · <a href="mailto:' + email + '">' + email + '</a>') : '') +
-              '</span>';
-          }
-          if (fr) {
-            fr.innerHTML = '<a href="' + tg + '" target="_blank" rel="noopener">Наш Telegram-канал</a>';
-          }
-        } catch (err) {
-          // не критично — оставляем дефолтную верстку
-          console.warn("applyContacts error:", err);
+          await navigator.clipboard.writeText(text);
+          ok = true;
+        } catch {
+          // fallback
+          const ta = document.createElement("textarea");
+          ta.value = text;
+          ta.style.position = "fixed";
+          ta.style.left = "-9999px";
+          document.body.appendChild(ta);
+          ta.select();
+          try { ok = document.execCommand("copy"); } catch {}
+          document.body.removeChild(ta);
         }
-      }
-
-      if (document.readyState === "loading") {
-        document.addEventListener("DOMContentLoaded", applyContacts, { once: true });
-      } else {
-        applyContacts();
-      }
-    })();
+        copyBtn.textContent = ok ? "Скопировано ✓" : "Не получилось";
+        copyBtn.disabled = true;
+        setTimeout(() => {
+          copyBtn.textContent = original;
+          copyBtn.disabled = false;
+        }, 1600);
+      });
+    }
   </script>
+  <script type="module" src="assets/js/app.js"></script>
 </body>
 </html>

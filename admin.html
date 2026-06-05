@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Админка — Визионер</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/admin.css">
+</head>
+<body class="admin">
+
+  <!-- Login overlay -->
+  <div id="login-overlay" class="login-overlay" style="display:none;">
+    <div class="login-box">
+      <h2>Визионер · Админка</h2>
+      <p>Введите пароль для доступа</p>
+      <input id="login-input" type="password" placeholder="пароль" autocomplete="off">
+      <div id="login-error" class="login-error"></div>
+      <button id="login-btn" class="btn primary" style="width:100%">Войти</button>
+    </div>
+  </div>
+
+  <div class="admin-shell">
+
+    <div class="admin-topbar">
+      <div>
+        <h1>Управление работами</h1>
+        <div class="meta">
+          <span id="works-count">0 работ</span> ·
+          <span id="dir-status">папка не подключена</span>
+        </div>
+      </div>
+      <div class="admin-actions">
+        <button id="btn-add" class="btn primary">+ Новая работа</button>
+        <button id="btn-export" class="btn">Сохранить works.json</button>
+        <button id="btn-connect-dir" class="btn" title="Только Chrome/Edge — позволяет писать прямо в файл проекта">Подключить папку проекта</button>
+        <button id="btn-import" class="btn">Импорт JSON</button>
+        <input id="import-input" type="file" accept="application/json" hidden>
+        <button id="btn-reset" class="btn danger">Откатить</button>
+      </div>
+    </div>
+
+    <div class="toolbar-row">
+      <input id="search" type="search" placeholder="Поиск по названию, художнику, id…">
+    </div>
+
+    <table class="works-table">
+      <thead>
+        <tr>
+          <th title="Перетащи для смены порядка"></th>
+          <th>Фото</th>
+          <th>Название</th>
+          <th>Художник</th>
+          <th>Год</th>
+          <th>Тип</th>
+          <th>Размер</th>
+          <th>Цена</th>
+          <th title="На главной">★</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="works-tbody"></tbody>
+    </table>
+
+    <p style="margin-top: 24px; font-size: 12px; color: var(--admin-soft); max-width: 640px;">
+      <strong>Памятка:</strong>
+      все правки сохраняются в localStorage, чтобы не потерять при перезагрузке.
+      Чтобы изменения попали на сайт, жми <em>«Сохранить works.json»</em> и закоммить файл в git
+      (или подключи папку проекта — тогда запись пойдёт сразу в файл, без скачивания).
+      Drag&amp;Drop фото работает прямо в форме новой работы.
+    </p>
+
+  </div>
+
+  <!-- Add/Edit modal -->
+  <div id="form-modal" class="modal-bg">
+    <div class="modal-box">
+      <h2 id="form-title">Новая работа</h2>
+
+      <div class="dropzone" id="dropzone">
+        <div>Перетащи сюда фото<br><span style="font-size:11px">или кликни для выбора</span></div>
+      </div>
+      <input id="file-input" type="file" accept="image/*" hidden>
+
+      <div class="form-grid" style="margin-top:20px">
+        <div class="field full">
+          <label for="f-title">Название *</label>
+          <input id="f-title" type="text">
+        </div>
+        <div class="field">
+          <label for="f-artist">Художник *</label>
+          <input id="f-artist" type="text">
+        </div>
+        <div class="field">
+          <label for="f-year">Год</label>
+          <input id="f-year" type="number" min="1800" max="2099">
+        </div>
+        <div class="field">
+          <label for="f-type">Тип</label>
+          <select id="f-type">
+            <option value="живопись">Живопись</option>
+            <option value="графика">Графика</option>
+            <option value="постеры">Постеры</option>
+            <option value="скульптура">Скульптура</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-genre">Жанр</label>
+          <input id="f-genre" type="text" placeholder="пейзаж, натюрморт, портрет…">
+        </div>
+        <div class="field">
+          <label for="f-material">Материал</label>
+          <input id="f-material" type="text" placeholder="холст, бумага, бронза…">
+        </div>
+        <div class="field">
+          <label for="f-technique">Техника</label>
+          <input id="f-technique" type="text" placeholder="масло, акварель, тушь…">
+        </div>
+        <div class="field">
+          <label for="f-size">Размер</label>
+          <input id="f-size" type="text" placeholder="60×70 см">
+        </div>
+        <div class="field">
+          <label for="f-price">Цена (число)</label>
+          <input id="f-price" type="text" placeholder="оставь пустым = По запросу">
+        </div>
+        <div class="field">
+          <label for="f-price_label">Подпись цены</label>
+          <input id="f-price_label" type="text" placeholder="По запросу">
+        </div>
+        <div class="field full">
+          <label for="f-description">Описание</label>
+          <textarea id="f-description"></textarea>
+        </div>
+        <div class="field full">
+          <label style="display:flex;align-items:center;gap:8px;cursor:pointer">
+            <input id="f-featured" type="checkbox">
+            <span>Показывать на главной странице</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="modal-form-actions">
+        <button id="form-cancel" class="btn">Отмена</button>
+        <button id="form-save" class="btn primary">Сохранить</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast"></div>
+
+  <script type="module" src="assets/js/admin.js"></script>
+</body>
+</html>

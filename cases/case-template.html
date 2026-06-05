@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Кейс: [Название кейса] — Визионер</title>
+  <meta name="description" content="[Короткое описание для соцсетей: что было, что стало]">
+
+  <link rel="icon" type="image/svg+xml" href="../assets/img/logo/favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../assets/css/styles.css">
+
+  <!-- Пути к скриптам и стилям с ../ потому что страница лежит в /cases/ -->
+  <style>
+    .case-images {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--s-5);
+      margin: var(--s-7) 0;
+    }
+    .case-images figure { margin: 0; }
+    .case-images img { width: 100%; height: auto; display: block; }
+    .case-images figcaption {
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      margin-top: var(--s-3);
+    }
+    @media (max-width: 720px) { .case-images { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+  <div id="site-header"></div>
+
+  <main id="content">
+
+    <section class="page-hero">
+      <div class="container">
+        <p class="breadcrumb"><a href="../index.html">Визионер</a> / Кейсы / [Имя клиента или название]</p>
+        <h1 class="h1">[Заголовок кейса — короткий, конкретный]</h1>
+        <p class="lead mt-5" style="max-width: 720px;">
+          [1–2 предложения: что искали, какое пространство, чем закончили]
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="case-images reveal">
+          <figure>
+            <img src="../assets/img/cases/case-X-before.jpg" alt="До">
+            <figcaption>До</figcaption>
+          </figure>
+          <figure>
+            <img src="../assets/img/cases/case-X-after.jpg" alt="После">
+            <figcaption>После</figcaption>
+          </figure>
+        </div>
+
+        <div class="prose reveal">
+
+          <h3>Запрос</h3>
+          <p>
+            [Что попросил клиент. Размер стены, стиль интерьера, бюджет, любые особенности.
+            Пример: «Светлая гостиная в скандинавском стиле, стена над диваном 2.5×1.5 м, бюджет до 80 000 ₽, хотелось пейзаж — но не классический».]
+          </p>
+
+          <h3>Что мы предложили</h3>
+          <p>
+            [Описание подборки — какие 3-5 работ предложили и почему именно их.
+            Объясни логику: палитра, формат, сюжет, настроение.]
+          </p>
+
+          <h3>Что выбрали</h3>
+          <p>
+            [Что в итоге выбрали. Один абзац с фото работы.]
+          </p>
+
+        </div>
+
+        <div class="mt-7" style="text-align: center;">
+          <a class="btn-line" href="../service.html">Подобрать для своего интерьера</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script type="module" src="../assets/js/app.js"></script>
+</body>
+</html>

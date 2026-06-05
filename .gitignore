@@ -1,0 +1,16 @@
+.backup/
+.DS_Store
+*.log
+__pycache__/
+.venv/
+node_modules/
+
+# Служебные папки AI-инструментов
+.claude/
+.cursor/
+
+# tmp/ оставляем в gitignore по умолчанию,
+# но КРОМЕ tmp/plans/ — там стратегические документы которые
+# должны быть доступны для AI-агентов в репозитории
+tmp/*
+!tmp/plans/

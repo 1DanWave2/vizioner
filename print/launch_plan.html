@@ -1,0 +1,571 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>Визионер — План вывода на первые продажи</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    @page {
+      size: A4;
+      margin: 16mm 18mm;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #fff;
+      color: #111;
+      font-family: 'Inter', -apple-system, sans-serif;
+      font-size: 11pt;
+      line-height: 1.45;
+    }
+
+    .sheet {
+      max-width: 180mm;
+      margin: 16mm auto;
+      padding: 0;
+    }
+
+    @media print {
+      .sheet { margin: 0; max-width: 100%; }
+      .no-print { display: none; }
+    }
+
+    .no-print {
+      max-width: 180mm;
+      margin: 8mm auto 0;
+      padding: 8px 12px;
+      background: #f4f0e8;
+      border: 1px solid #ddd6c4;
+      font-size: 10pt;
+      color: #555;
+    }
+
+    .header {
+      border-bottom: 2px solid #111;
+      padding-bottom: 8mm;
+      margin-bottom: 8mm;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 10mm;
+    }
+
+    .brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28pt;
+      font-weight: 500;
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-sub {
+      font-size: 9pt;
+      color: #666;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    .meta {
+      text-align: right;
+      font-size: 9pt;
+      color: #666;
+      letter-spacing: 0.06em;
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 500;
+      font-size: 22pt;
+      line-height: 1.15;
+      margin: 0 0 6mm;
+      color: #111;
+    }
+
+    h2 {
+      font-size: 9pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #111;
+      margin: 7mm 0 3mm;
+      padding-bottom: 2mm;
+      border-bottom: 1px solid #111;
+    }
+
+    h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 500;
+      font-size: 13pt;
+      margin: 4mm 0 1.5mm;
+      color: #111;
+    }
+
+    p { margin: 0 0 2mm; }
+
+    .lead {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 13pt;
+      line-height: 1.4;
+      color: #333;
+      margin-bottom: 4mm;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6mm;
+    }
+
+    .three-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 5mm;
+    }
+
+    .box {
+      padding: 4mm 5mm;
+      border: 1px solid #ccc;
+      background: #fafaf6;
+    }
+
+    .box h3 {
+      margin-top: 0;
+    }
+
+    .box-key {
+      font-size: 8pt;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #666;
+      margin-bottom: 1mm;
+    }
+
+    .box-val {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 16pt;
+      line-height: 1.1;
+      color: #111;
+    }
+
+    ul, ol {
+      margin: 0 0 3mm;
+      padding-left: 5mm;
+    }
+
+    li { margin-bottom: 1mm; }
+
+    .check-list {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .check-list li {
+      padding-left: 7mm;
+      position: relative;
+      margin-bottom: 1.5mm;
+    }
+
+    .check-list li::before {
+      content: "☐";
+      position: absolute;
+      left: 0;
+      top: -1px;
+      font-size: 12pt;
+      color: #444;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 10pt;
+      margin: 2mm 0 3mm;
+    }
+
+    th, td {
+      text-align: left;
+      padding: 2mm 3mm;
+      border-bottom: 1px solid #ddd;
+      vertical-align: top;
+    }
+
+    th {
+      background: #f1ede1;
+      font-size: 8pt;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #555;
+      font-weight: 700;
+    }
+
+    .month-block {
+      padding: 4mm 5mm;
+      border-left: 3px solid #111;
+      background: #fafaf6;
+      margin-bottom: 3mm;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .month-block h3 {
+      margin: 0 0 2mm;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 4mm;
+    }
+
+    .month-tag {
+      font-family: 'Inter', sans-serif;
+      font-size: 8pt;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: #888;
+    }
+
+    .signature-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10mm;
+      margin-top: 8mm;
+      padding-top: 5mm;
+      border-top: 1px solid #111;
+    }
+
+    .sig-line {
+      border-bottom: 1px solid #111;
+      padding-bottom: 2mm;
+      min-height: 14mm;
+    }
+
+    .sig-label {
+      font-size: 8pt;
+      color: #666;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      margin-top: 2mm;
+    }
+
+    .footer-note {
+      margin-top: 6mm;
+      padding-top: 3mm;
+      border-top: 1px solid #ddd;
+      font-size: 9pt;
+      color: #777;
+      text-align: center;
+    }
+
+    .pagebreak {
+      page-break-before: always;
+      break-before: page;
+    }
+
+    .muted {
+      color: #666;
+      font-size: 10pt;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="no-print">
+    💡 Чтобы распечатать: нажми <strong>Cmd+P</strong> (или Ctrl+P) — браузер откроет диалог печати.
+    Выбери «Сохранить как PDF» для электронной версии или сразу принтер для бумаги.
+    Эта подсказка автоматически не печатается.
+  </div>
+
+<div class="sheet">
+
+  <!-- ============ ШАПКА ============ -->
+  <div class="header">
+    <div>
+      <div class="brand">Визионер</div>
+      <div class="brand-sub">Галерея современного искусства</div>
+    </div>
+    <div class="meta">
+      План вывода на первые продажи<br>
+      Горизонт: 6 месяцев<br>
+      Дата: 28 мая 2026
+    </div>
+  </div>
+
+  <!-- ============ КОНТЕКСТ ============ -->
+  <h1>От запуска бренда к первым стабильным продажам</h1>
+
+  <p class="lead">
+    Визионер — онлайн-галерея современного российского искусства и услуга подбора работ под интерьер.
+    Документ описывает шесть месяцев работы: от завершения подготовки каталога
+    до выхода на стабильный поток 2–3 продаж в месяц и узнаваемого бренда в нише.
+  </p>
+
+  <!-- ============ СТАРТОВАЯ ПОЗИЦИЯ ============ -->
+  <h2>Стартовая позиция</h2>
+
+  <div class="three-col">
+    <div class="box">
+      <div class="box-key">Каталог</div>
+      <div class="box-val">24 работы</div>
+      <p class="muted">Плюс 26 фото художника Есенова, ожидающих добавления. Итого потенциал — 50 работ.</p>
+    </div>
+    <div class="box">
+      <div class="box-key">Художники</div>
+      <div class="box-val">4 автора</div>
+      <p class="muted">Изумрудов, Углач, Шугаев, Есенов. Прямые договорённости — без посредников.</p>
+    </div>
+    <div class="box">
+      <div class="box-key">Канал</div>
+      <div class="box-val">Telegram</div>
+      <p class="muted">Канал создан, только приветственное сообщение. Подписчики — близкий круг.</p>
+    </div>
+  </div>
+
+  <div class="three-col" style="margin-top: 3mm;">
+    <div class="box">
+      <div class="box-key">Сайт</div>
+      <div class="box-val">Готов</div>
+      <p class="muted">Каталог, страница услуги «Подбор», админка. Деплой ожидает.</p>
+    </div>
+    <div class="box">
+      <div class="box-key">Бюджет</div>
+      <div class="box-val">5 000 ₽/мес</div>
+      <p class="muted">На продвижение. Команда — два основателя.</p>
+    </div>
+    <div class="box">
+      <div class="box-key">Продажи</div>
+      <div class="box-val">0</div>
+      <p class="muted">Стартовая точка. Цель — валидация продукта рынком.</p>
+    </div>
+  </div>
+
+  <!-- ============ ЦЕЛИ ============ -->
+  <h2>Цели на 6 месяцев</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Направление</th>
+        <th>Точка А (сейчас)</th>
+        <th>Точка Б (через 6 мес)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Подписчики Telegram</td>             <td>10–20</td>     <td>400–800</td></tr>
+      <tr><td>Лидов в месяц</td>                   <td>0</td>         <td>8–15</td></tr>
+      <tr><td>Продаж в месяц</td>                  <td>0</td>         <td>2–3</td></tr>
+      <tr><td>Партнёров-дизайнеров</td>            <td>0</td>         <td>4–7</td></tr>
+      <tr><td>Каталог</td>                         <td>24 работы</td> <td>60+ работ, регулярные поступления</td></tr>
+      <tr><td>Готовые кейсы «До/После»</td>        <td>0</td>         <td>3–5 публикаций на сайте</td></tr>
+    </tbody>
+  </table>
+
+  <p class="muted">
+    Приоритет — бренд и узнаваемость в нише. Продажи на этом этапе нужны как обратная связь
+    от рынка: что покупают, по каким ценам, через какой канал приходят.
+  </p>
+
+  <!-- ============ ПЛАН ПО МЕСЯЦАМ ============ -->
+  <h2>План работ по месяцам</h2>
+
+  <div class="month-block">
+    <h3>Месяц 1<span class="month-tag">Фундамент · бюджет 0 ₽</span></h3>
+    <ul class="check-list">
+      <li>Проставить цены (вилки от/до) для всех 24 работ через админку</li>
+      <li>Добавить 26 работ Есенова в каталог — итого 50</li>
+      <li>Переписать описания работ: для каждого — 2–3 предложения, где повесить и под какое настроение</li>
+      <li>Опубликовать сайт на GitHub Pages (или равноценном хостинге)</li>
+      <li>Заменить приветственное сообщение Telegram-канала</li>
+      <li>Запустить контент-календарь: 3 поста в неделю по готовым шаблонам</li>
+      <li>Подготовить скрипты ответа клиентам и шаблон подборки</li>
+    </ul>
+  </div>
+
+  <div class="month-block">
+    <h3>Месяц 2<span class="month-tag">Первый трафик · бюджет 5 000 ₽</span></h3>
+    <ul class="check-list">
+      <li>Один платный пост в нишевом Telegram-канале про интерьер (≈3 000 ₽)</li>
+      <li>Бустинг одного лучшего поста в Instagram (≈2 000 ₽)</li>
+      <li>Холодная рассылка 30–40 дизайнерам интерьеров (Telegram, Instagram)</li>
+      <li>Залить весь каталог в Pinterest (по 5–10 пинов на работу)</li>
+      <li><strong>Контрольная точка:</strong> первая продажа — валидирует каналы и оффер</li>
+    </ul>
+  </div>
+
+  <div class="month-block">
+    <h3>Месяц 3<span class="month-tag">Анализ + офлайн · бюджет 5 000 ₽</span></h3>
+    <ul class="check-list">
+      <li>Печать 100 визиток и 30 А5-флаеров для офлайн-нетворкинга (≈3 000 ₽)</li>
+      <li>Бартер с одним микроблогером-дизайнером: постер за обзор (≈2 000 ₽)</li>
+      <li>Анализ: какие посты дали лиды, какие нет. Удвоение рабочих форматов</li>
+      <li>Опубликовать первый кейс «До/После» (можно модельный)</li>
+      <li>Запустить серию SEO-статей на сайте: «Как выбрать картину в гостиную» и др.</li>
+    </ul>
+  </div>
+
+  <div class="month-block">
+    <h3>Месяцы 4–6<span class="month-tag">Закрепление · бюджет 5 000 ₽/мес</span></h3>
+    <ul class="check-list">
+      <li>Чередование: один месяц — нишевый пост, другой — блогер или офлайн</li>
+      <li>Регулярные новые работы в каталог — 5–10 в месяц</li>
+      <li>3–5 кейсов «До/После» опубликованы</li>
+      <li>4–7 активных дизайнеров-партнёров с регулярными запросами</li>
+      <li>Стабильные 2–3 продажи в месяц как новая норма</li>
+      <li>Появление органических лидов — клиенты, нашедшие сами, без рекламы</li>
+    </ul>
+  </div>
+
+  <!-- ============ КАНАЛЫ ============ -->
+  <h2>Каналы привлечения · приоритет органика (80 %)</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Канал</th>
+        <th>Описание</th>
+        <th>Ожидание</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Pinterest</strong></td>
+        <td>Каждая работа — 5–10 пинов с описанием. Бесплатно, долгий цикл накопления.</td>
+        <td>Через 3–6 мес — стабильный поток заходов на сайт</td>
+      </tr>
+      <tr>
+        <td><strong>Холодная рассылка дизайнерам</strong></td>
+        <td>10–15 личных писем в неделю с предложением сотрудничества (10 % комиссии).</td>
+        <td>5–10 % отклик → 1–2 партнёра в месяц</td>
+      </tr>
+      <tr>
+        <td><strong>Telegram-канал</strong></td>
+        <td>3 поста в неделю: художник, подборка под интерьер, процесс/FAQ.</td>
+        <td>Точка удержания и лидогенерации</td>
+      </tr>
+      <tr>
+        <td><strong>Гостевые посты</strong></td>
+        <td>Полезный контент в чужих каналах по интерьеру в обмен на упоминание.</td>
+        <td>+20–100 подписчиков с публикации</td>
+      </tr>
+      <tr>
+        <td><strong>Точечная платная реклама</strong></td>
+        <td>5 000 ₽/мес: нишевые TG-каналы, бустинг лучших постов.</td>
+        <td>Тест офферов и связок</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- ============ РОЛИ ============ -->
+  <h2>Распределение ролей · предложение к обсуждению</h2>
+
+  <div class="two-col">
+    <div class="box">
+      <div class="box-key">Партнёр А — Развитие и продукт</div>
+      <ul style="margin-bottom: 0;">
+        <li>Сайт, каталог, тексты</li>
+        <li>Контент в Telegram (3 поста/нед)</li>
+        <li>Pinterest, SEO</li>
+        <li>Технические задачи и аналитика</li>
+      </ul>
+    </div>
+    <div class="box">
+      <div class="box-key">Партнёр Б — Отношения и продажи</div>
+      <ul style="margin-bottom: 0;">
+        <li>Работа с художниками — расширение каталога</li>
+        <li>Холодные контакты с дизайнерами</li>
+        <li>Личные встречи и показы по Москве</li>
+        <li>Сделки и сопровождение клиентов</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ============ ОСНОВНЫЕ РИСКИ ============ -->
+  <h2>Основные риски и как с ними работать</h2>
+
+  <ol>
+    <li>
+      <strong>Перегрузка от ручного подбора.</strong>
+      На 20–30 запросов в месяц подбор занимает 30–60 часов. Решение: с 3-го месяца стандартизировать
+      подборки по типам интерьера (скандинавский, минимализм, классический и т. д.).
+    </li>
+    <li>
+      <strong>Узкий рынок российского современного искусства.</strong>
+      Нивелируем через позиционирование на «искусство в интерьер», а не на коллекционирование.
+    </li>
+    <li>
+      <strong>Микро-бюджет ограничивает платное привлечение.</strong>
+      Компенсируем органикой и партнёрской сетью дизайнеров.
+    </li>
+    <li>
+      <strong>Долгий цикл сделки.</strong>
+      Покупатель может думать 2–4 недели. Помогают follow-up через 3 дня и регулярные напоминания через контент-канал.
+    </li>
+  </ol>
+
+  <!-- ============ КЛЮЧЕВЫЕ МЕТРИКИ ============ -->
+  <h2>Что отслеживаем еженедельно</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Метрика</th>
+        <th>Месяц 1</th>
+        <th>Месяц 3</th>
+        <th>Месяц 6</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Подписчики Telegram</td>          <td>30–60</td>   <td>100–200</td>  <td>400–800</td></tr>
+      <tr><td>Среднее число просмотров поста</td><td>30</td>     <td>80–120</td>   <td>200+</td></tr>
+      <tr><td>Лидов в месяц</td>                 <td>1–2</td>    <td>3–5</td>      <td>8–15</td></tr>
+      <tr><td>Продаж в месяц</td>                <td>0</td>      <td>0–1</td>      <td>2–3</td></tr>
+      <tr><td>Партнёров-дизайнеров</td>          <td>0</td>      <td>1–2</td>      <td>4–7</td></tr>
+    </tbody>
+  </table>
+
+  <p class="muted">
+    Если за 2 недели нет ни одного лида — пересматриваем гипотезу.
+    Не там трафик, или не цепляет контент, или непонятен оффер.
+  </p>
+
+  <!-- ============ РЕЗЮМЕ ============ -->
+  <h2>Резюме</h2>
+
+  <p>
+    Шесть месяцев работы — от завершения каталога до устойчивого потока продаж.
+    Основа стратегии: <strong>органический рост, прямая работа с художниками,
+    профессиональная сеть дизайнеров интерьеров и заметная услуга подбора</strong>.
+    Платная реклама — точечный инструмент тестирования гипотез, не основа привлечения.
+  </p>
+
+  <p>
+    Первый контрольный рубеж — <strong>конец 2-го месяца</strong>: первая продажа
+    как подтверждение рабочего канала и оффера. Дальше — масштабирование того, что сработало.
+  </p>
+
+  <!-- ============ ПОДПИСИ ============ -->
+  <div class="signature-row">
+    <div>
+      <div class="sig-line"></div>
+      <div class="sig-label">Партнёр А · подпись и дата</div>
+    </div>
+    <div>
+      <div class="sig-line"></div>
+      <div class="sig-label">Партнёр Б · подпись и дата</div>
+    </div>
+  </div>
+
+  <div class="footer-note">
+    Визионер · vizioner959 в Telegram · +7 903 720 24 99
+  </div>
+
+</div>
+
+</body>
+</html>
