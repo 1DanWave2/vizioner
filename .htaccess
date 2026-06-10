@@ -1,0 +1,75 @@
+# Конфигурация Apache для Visioner
+# Для Timeweb shared hosting (PHP не используется)
+
+# Включаем модуль перезаписи
+RewriteEngine On
+
+# === Редирект с www → без www ===
+RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
+# === Принудительный HTTPS ===
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+# === Кастомная 404 страница ===
+ErrorDocument 404 /404.html
+
+# === Запрет доступа к служебным папкам и файлам ===
+RedirectMatch 403 ^/\.git
+RedirectMatch 403 ^/tools/
+RedirectMatch 403 ^/tmp/
+RedirectMatch 403 ^/\.backup/
+RedirectMatch 403 ^/print/
+RedirectMatch 403 ^/.*\.md$
+
+# === Кеширование статики ===
+<IfModule mod_expires.c>
+  ExpiresActive On
+
+  # Изображения — кеш 1 месяц
+  ExpiresByType image/jpeg "access plus 1 month"
+  ExpiresByType image/png "access plus 1 month"
+  ExpiresByType image/svg+xml "access plus 1 month"
+  ExpiresByType image/webp "access plus 1 month"
+  ExpiresByType image/x-icon "access plus 1 month"
+
+  # CSS/JS — 1 неделя (когда правишь — меняй ?v= в подключении)
+  ExpiresByType text/css "access plus 1 week"
+  ExpiresByType application/javascript "access plus 1 week"
+
+  # Шрифты — 1 месяц
+  ExpiresByType font/woff "access plus 1 month"
+  ExpiresByType font/woff2 "access plus 1 month"
+
+  # HTML — без кеша (обновляется часто)
+  ExpiresByType text/html "access plus 0 seconds"
+
+  # JSON — короткий кеш
+  ExpiresByType application/json "access plus 1 hour"
+</IfModule>
+
+# === Сжатие gzip ===
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/javascript application/javascript application/json image/svg+xml
+</IfModule>
+
+# === Безопасность ===
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+  Header set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+</IfModule>
+
+# === Типы файлов (на случай если не определены) ===
+<IfModule mod_mime.c>
+  AddType image/svg+xml .svg
+  AddType application/json .json
+  AddType application/javascript .js
+  AddCharset utf-8 .html .css .js .json .svg .xml
+</IfModule>
+
+# === Запрет листинга каталогов ===
+Options -Indexes

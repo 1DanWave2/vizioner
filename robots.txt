@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /admin.html
+Disallow: /tools/
+Disallow: /tmp/
+Disallow: /.backup/
+Disallow: /print/
+
+Sitemap: https://artvizioner.ru/sitemap.xml
