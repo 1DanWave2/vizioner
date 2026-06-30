@@ -59,10 +59,22 @@ function render(artists, works) {
   requestAnimationFrame(() => initReveal(mount));
 }
 
+function scrollToHashTarget() {
+  const hash = location.hash.replace(/^#/, "");
+  if (!hash) return;
+  const el = document.getElementById(hash);
+  if (!el) return;
+  // ждём кадр чтобы reveal-анимация запустилась, потом скроллим
+  requestAnimationFrame(() => {
+    el.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+}
+
 (async function init() {
   try {
     const [artists, works] = await Promise.all([loadArtists(), loadWorks()]);
     render(artists, works);
+    scrollToHashTarget();
   } catch (err) {
     console.error(err);
     const mount = document.getElementById("artists-list");

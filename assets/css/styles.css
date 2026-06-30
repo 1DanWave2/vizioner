@@ -1250,6 +1250,8 @@ button {
   gap: var(--s-7);
   padding-bottom: var(--s-9);
   border-bottom: 1px solid var(--line);
+  /* Чтобы при переходе по якорю (artists.html#vilgort) sticky header не закрывал заголовок */
+  scroll-margin-top: 100px;
 }
 
 .artist-block:last-child {
