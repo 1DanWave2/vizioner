@@ -5,6 +5,12 @@ __pycache__/
 .venv/
 node_modules/
 
+# Секреты — никогда не коммитим
+.env
+.env.deploy
+.env.local
+.deploy-cache.json
+
 # Служебные папки AI-инструментов
 .claude/
 .cursor/
