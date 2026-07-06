@@ -4,17 +4,14 @@
 # Включаем модуль перезаписи
 RewriteEngine On
 
-# === Редирект с www → без www (на HTTP пока нет валидного SSL) ===
+# === Редирект с www → без www ===
 RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
-RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
 
-# === Принудительный HTTPS — ВЫКЛЮЧЕНО до настройки SSL для artvizioner.ru ===
-# После заказа Let's Encrypt в панели Timeweb — раскомментируй блок ниже
-# и поменяй http://%1/$1 выше на https://%1/$1
-#
-# RewriteCond %{HTTPS} off
-# RewriteCond %{HTTP:X-Forwarded-Proto} !https
-# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+# === Принудительный HTTPS (SSL Let's Encrypt действует до 2026-10-01) ===
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
 # === Кастомная 404 страница ===
 ErrorDocument 404 /404.html
